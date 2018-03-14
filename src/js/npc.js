@@ -1,10 +1,10 @@
-export class Player{
-  constructor(name, str, int){
-      this.name = name;
-      this.str = str;
-      this.int = int;
+export class NPC{
+  constructor(name, str, int, hp){
+    this.name = name;
+    this.str = str;
+    this.int = int;
+    this.hp = hp;
   }
-
   getName(){
     return this.name;
   }
@@ -18,10 +18,14 @@ export class Player{
     return this.int;
   }
 
+  getHp()
+  {
+    return this.hp;
+  }
+
   statRoll(){
   let stat = Math.floor( Math.random() * 12) + 1;
   return stat;
   }
-
 
 }
