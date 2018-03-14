@@ -4,6 +4,7 @@ export class NPC{
     this.str = str;
     this.int = int;
     this.hp = hp;
+    this.exp = (this.str + this.int) / 100;
   }
   getName(){
     return this.name;
@@ -23,6 +24,11 @@ export class NPC{
     return this.hp;
   }
 
+  getExp()
+  {
+    return this.exp;
+  }
+
   statRoll(){
   let stat = Math.floor( Math.random() * 12) + 1;
   return stat;
@@ -34,5 +40,7 @@ export class NPC{
   return opponent.hp;
 
   }
+
+
 
 }
