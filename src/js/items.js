@@ -28,6 +28,14 @@ export class Regen{
      this.uses -= 1;
   }
 
+export class Weapon{
+  constructor(){
+    this.name = name;
+    this.effect = effect;
+    this.charge = charge;
+  }
+  //create some waepons
+}
 
 
 

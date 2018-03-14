@@ -7,6 +7,7 @@ export class Player{
       this.health = hp;
       this.lvl = lvl;
       this.inv = [];
+      this.wepEff = 0;
   }
 
   getName(){
@@ -46,7 +47,13 @@ export class Player{
 
   meleeRoll(opponent){
 
-  let dmg = Math.floor( Math.random() * (this.str * .75)) + 1;
+  let dmg = Math.floor( (Math.random() * (this.str * .75)+ this.wepEff)) + 1;
+  opponent.hp -= dmg;
+  return opponent.hp;
+  }
+
+  rangeRoll(opponent){
+  let dmg =  this.wepEff;
   opponent.hp -= dmg;
   return opponent.hp;
   }
@@ -81,6 +88,13 @@ export class Player{
     this.str = (this.str + this.lvl) - (this.str * .1);
     this.int = (this.int + this.lvl) - (this.int * .1);
     this.health = (this.health + this.lvl) + 1 ;
+  }
+
+
+//test this method
+  equipWeapon(item){
+    this.wepEff += item.effect;
+
   }
 
 }
