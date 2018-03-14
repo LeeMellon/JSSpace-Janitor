@@ -4,6 +4,7 @@ export class Player{
       this.str = str;
       this.int = int;
       this.hp = hp;
+      this.health = hp;
       this.lvl = lvl;
   }
 
@@ -25,6 +26,10 @@ export class Player{
     return this.hp;
   }
 
+  getHealth()
+  {
+    return this.health;
+  }
 
   getLvl()
   {
@@ -44,18 +49,35 @@ export class Player{
   }
 
   meleeCombat(opponent){
+    console.log("player hp: " + this.getHp())
     while(this.hp > 0){
       this.meleeRoll(opponent)
+      console.log("opponet hp: " + opponent.getHp())
+
         if(opponent.hp<= 0){
           this.lvl += opponent.getExp();
+          this.levelUp();
+          console.log("player hp: " + this.getHp())
+
           return "player has won";
 
         } else if (opponent.hp > 0) {
+          console.log("opponet hp: " + opponent.getHp())
+
           opponent.meleeRoll(this)
+          console.log("player hp: " + this.getHp())
+
           if (this.hp <= 0){
-          return "the player ahs died";
+          return "the player has died";
       }
     }
   }
   }
+
+  levelUp(){
+    this.str = (this.str + this.lvl) - (this.str * .1);
+    this.int = (this.int + this.lvl) - (this.int * .1);
+    this.health = (this.health + this.lvl) + 1 ;
+  }
+
 }

@@ -37,5 +37,26 @@ it('should increase player level after npc defeat', function(){
   expect(exp).toBeGreaterThan(1);
 });
 
+it('should increase player stats after npc defeat', function(){
+  let player = new Player('nico2', 10, 10, 20, 1);
+  let npc = new NPC ('uggo', 10, 10, 2);
+  player.meleeCombat(npc);
+  let str = player.getStr();
+  console.log("npc exp: " + npc.getExp());
+  console.log("player str: " + str);
+  console.log("player hp after win: " + player.getHp());
+  expect(str).toBeGreaterThan(10);
+});
+
+it('should increase player health after npc defeat', function(){
+  let player = new Player('nico2', 10, 10, 20, 1);
+  let npc = new NPC ('uggo', 10, 10, 2);
+  player.meleeCombat(npc);
+  let health = player.getHealth();
+  console.log("npc exp: " + npc.getExp());
+  console.log("player health after win: " +player.getHp() + "/"+ player.getHealth());
+  expect(health).toBeGreaterThan(20);
+
+});
 
 });
