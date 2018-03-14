@@ -1,5 +1,6 @@
 import {Player} from './../src/js/player.js';
 import {NPC} from './../src/js/npc.js';
+import {Regen} from './../src/js/items.js';
 
 describe('Player', function(){
 
@@ -58,5 +59,16 @@ it('should increase player health after npc defeat', function(){
   expect(health).toBeGreaterThan(20);
 
 });
+it('should increase player health', function(){
+  let player = new Player('nico2', 10, 10, 1, 1);
+  let aid  = new Regen();
+  aid.consumeItem(player);
+  let hp = player.hp;
+  console.log("player hp: " + hp);
+  console.log("uses left: " + aid.uses)
+  expect(hp).toBeGreaterThan(1);
+
+});
+
 
 });

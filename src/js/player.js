@@ -6,6 +6,7 @@ export class Player{
       this.hp = hp;
       this.health = hp;
       this.lvl = lvl;
+      this.inv = [];
   }
 
   getName(){
@@ -35,6 +36,8 @@ export class Player{
   {
     return this.lvl;
   }
+
+
 
   statRoll(){
   let stat = Math.floor( Math.random() * 12) + 1;
