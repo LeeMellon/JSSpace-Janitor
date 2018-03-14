@@ -30,12 +30,10 @@ export class Player{
   }
 
   meleeRoll(opponent){
-  console.log(opponent);
-  console.log(opponent.hp);
+
   let dmg = Math.floor( Math.random() * (this.str * .75)) + 1;
   opponent.hp -= dmg;
-  console.log("damage: " + dmg);
-  console.log(opponent.hp);
+
 
   return opponent.hp;
   }

@@ -28,4 +28,11 @@ export class NPC{
   return stat;
   }
 
+  meleeRoll(opponent){
+  let dmg = Math.floor( Math.random() * (this.str * .9)) + 1;
+  opponent.hp -= dmg;
+  return opponent.hp;
+
+  }
+
 }
