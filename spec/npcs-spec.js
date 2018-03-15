@@ -16,8 +16,7 @@ describe('NPC', function(){
     let player = new Player('nico2', 10, 10, 10, 0);
     let npc = new NPC ('uggo', 20, 10, 10);
     npc.meleeRoll(player);
-    let result = player.getHp();
-    console.log(npc.getExp());
+    let result = player.hp;
     expect(result).toBeLessThan(10);
 });
 

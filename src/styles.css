@@ -1,5 +1,5 @@
-/*body {
-    background: url(../src/img/space.gif);
+body {
+    display: flex;
     background-size: cover;
 
 }
@@ -12,6 +12,50 @@ h1 {
 }
 
 p {
-  color: white;
   font-weight: bold;
-}*/
+}
+
+.specialText {
+  color: red;
+  font-size: 2em;
+}
+
+#intro {
+  display: none;
+}
+
+#start {
+  display: none;
+}
+
+#terminal{
+  display: none;
+  border: 2px blue solid;
+}
+
+#game{
+  display: none;
+  border: 2px red solid;
+  height: 300px;
+}
+
+#gameScreen{
+  /*display: none;*/
+  border: 2px green solid;
+  width: inherit;
+
+}
+
+.termLabel{
+  list-style: none;
+}
+
+.profImg{
+  height: 100px;
+  width: auto;
+}
+
+.messageBox {
+  background-color: yellow;
+  height: 10em;
+}

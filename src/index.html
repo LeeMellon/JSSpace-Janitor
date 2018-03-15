@@ -1,10 +1,9 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" type="css">
     <meta charset="utf-8">
     <title>Space Janitor</title>
   </head>
@@ -12,6 +11,36 @@
     <div class="container">
     <h1>Space Janitor</h1>
     <p>a javascript adventure by Ian Goodrich and Nico Daunt</p>
+
+    <form id="name-form" class="form-control">
+      <label for="name">Enter your name: </label>
+      <input type="text" id="name"></input>
+      <button type="submit" class="btn btn-lg">SUBMIT</button>
+    </form>
+
+    <div id ="intro">
+    <p>Good morning <span id="outputName" class="specialText"> </span>. You've been sleeping for 127 years. Actually, you've been in a state of cyro-stasis, frozen alongside hundreds of passengers on the SS Miskatonic. You are currently in transit, on a journey to New Earth, scheduled for an arrival in 2,011 years. Unfortunately, your cyro-crypt has malfunctioned, which is why you'll notice that all other passengers aboard are still in hibernation. Lucky for you, the SS Miskatonic is in need of a handyman. The original engineers overlooked the necessity of active personnel onboard the fleet, and after a century worth of travel, the ship has picked up some unintended stowaways. Never to fear, armed with your recently thawed fists, and a cache of hidden weapons, you should be able to take care of these unknown creatures, while maintaining the safety of your fellow frozen humans. Our records indicate that you have an intelligence factor of <span id="outputInt" class="specialText" >  </span> and a strength factor of <span id="outputStr" class="specialText">  </span>. So good luck with that! </p>
+      <form id="start">
+        <button type="submit" class="btn btn-lg btn-danger">LETS GO!</button>
+      </form>
+    </div>
+    <div id='game' class="row">
+      <div id="terminal" class="col-md-3">
+        <ul class="termLabel">
+          <li> <img src="http://pixelartmaker.com/art/9328b72e9474191.png" class="profImg"></li>
+        <li>Name: <span id='outputNameMain' class="termLabel"></span></li>
+        <li>Strength: <span id='outputStrMain' class="termLabel"></span></li>
+        <li>Intelligence: <span id='outputIntMain' class="termLabel"></span></li>
+        <li>Health: <span id='outputHpMain' class="termLabel"></span>/<span id='outputHealthMain' class="termLabel"></span>hp</li>
+        <li>Lvl: <span id='outputLvlMain' class="termLabel"></span></li>
+      </ul>
+      </div>
+      <div id='gameScreen' class="col-md-9">
+        <img src="https://streak.club/img/Mix1c2VyX2NvbnRlbnQvdXBsb2Fkcy9pbWFnZS8yNjkyOC5naWY=/600x/%2FjZfQr.gif">
+      </div>
+      <div id='messageBox' class="row">
+      </div>
+    </div>
   </div>
   </body>
-</html> -->
+</html>

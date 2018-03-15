@@ -6,37 +6,12 @@ export class Regen{
     this.effect = "hp";
   }
 
-  getName()
-  {
-    return this.name;
-  }
-
-  getUses()
-  {
-    return this.uses;
-  }
-
-  getPotentcy()
-  {
-    return this.potentcy;
-  }
-
   consumeItem(player)
   {
      player.hp += this.potentcy;
     //  return player.hp;
      this.uses -= 1;
   }
-
-export class Weapon{
-  constructor(){
-    this.name = name;
-    this.effect = effect;
-    this.charge = charge;
-  }
-  //create some waepons
-}
-
 
 
 }

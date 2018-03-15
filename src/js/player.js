@@ -1,45 +1,23 @@
 export class Player{
-  constructor(name, str, int, hp, lvl){
+  constructor(name, str, int){
       this.name = name;
       this.str = str;
       this.int = int;
-      this.hp = hp;
-      this.health = hp;
-      this.lvl = lvl;
+      this.hp = this.str * 2;
+      this.health = this.hp;
+      this.lvl = 1;
       this.inv = [];
       this.wepEff = 0;
   }
 
-  getName(){
-    return this.name;
+  thawPlayer(name){
+    let sacrifice = new Player("ouch", 0, 0, 0, 0);
+    let str = sacrifice.statRoll();
+    let int = sacrifice.statRoll();
+    let newPlayer = new Player (name, str, int, );
+    return newPlayer;
+
   }
-
-  getStr(){
-    return this.str;
-  }
-
-  getInt()
-  {
-    return this.int;
-  }
-
-  getHp()
-  {
-    return this.hp;
-  }
-
-  getHealth()
-  {
-    return this.health;
-  }
-
-  getLvl()
-  {
-    return this.lvl;
-  }
-
-
-
   statRoll(){
   let stat = Math.floor( Math.random() * 12) + 1;
   return stat;
@@ -59,23 +37,18 @@ export class Player{
   }
 
   meleeCombat(opponent){
-    console.log("player hp: " + this.getHp())
     while(this.hp > 0){
       this.meleeRoll(opponent)
-      console.log("opponet hp: " + opponent.getHp())
 
         if(opponent.hp<= 0){
-          this.lvl += opponent.getExp();
+          this.lvl += opponent.exp;
           this.levelUp();
-          console.log("player hp: " + this.getHp())
 
           return "player has won";
 
         } else if (opponent.hp > 0) {
-          console.log("opponet hp: " + opponent.getHp())
 
           opponent.meleeRoll(this)
-          console.log("player hp: " + this.getHp())
 
           if (this.hp <= 0){
           return "the player has died";
